@@ -9,10 +9,12 @@ API-endpoints:
 Employee:
 
 POST /api/hrdepartment/CreateEmployee: Добавить новые сотрудника
+
 GET /api/hrdepartment/GetAllEmployees: Получить всех сотрудников
-PUT /api/hrdepartment/EditEmployee: Обновить конкретного сотрудника
-DELETE /api/hrdepartment/DeleteEmployee: Удалить сотрудника
-GET /api/hrdepartment/GetPosition: Получить все должности сотрудника
+
+PUT /api/hrdepartment/EditEmployee: Обновить конкретного сотрудника 
+DELETE /api/hrdepartment/DeleteEmployee: Удалить сотрудника 
+GET /api/hrdepartment/GetPosition: Получить все должности сотрудника 
 
 Shift:
 
