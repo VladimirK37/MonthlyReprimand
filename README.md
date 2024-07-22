@@ -8,18 +8,16 @@ API-endpoints:
 
 Employee:
 
-POST /api/hrdepartment/CreateEmployee: Добавить новые сотрудника
-
-GET /api/hrdepartment/GetAllEmployees: Получить всех сотрудников
-
+POST /api/hrdepartment/CreateEmployee: Добавить новые сотрудника  
+GET /api/hrdepartment/GetAllEmployees: Получить всех сотрудников  
 PUT /api/hrdepartment/EditEmployee: Обновить конкретного сотрудника  
 DELETE /api/hrdepartment/DeleteEmployee: Удалить сотрудника  
 GET /api/hrdepartment/GetPosition: Получить все должности сотрудника  
 
 Shift:
 
-POST /api/checkpoint/exit: Выход через КПП
-POST /api/checkpoint/start: Вход через КПП
+POST /api/checkpoint/exit: Выход через КПП  
+POST /api/checkpoint/start: Вход через КПП  
 
 Зависимости:
 
