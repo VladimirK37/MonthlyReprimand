@@ -2,6 +2,7 @@
 Описание: Проект .NET 8.0 API, использующий AutoMapper,Entity Framework, Entity Framework Design и Entity Framework Tools для взаимодействия с базой данных SQLite.
 
 Функции:
+
 Три основные сущности: Employee, Position, Shift
 CRUD (Create, Read, Update, Delete) операции для сущности Employee
 API-endpoints:
