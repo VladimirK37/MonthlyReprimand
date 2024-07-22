@@ -1,0 +1,49 @@
+﻿@MonthlyReprimand_HostAddress = https://localhost:7214
+
+POST {{MonthlyReprimand_HostAddress}}/api/checkpoint/exit
+Content-Type: application/json
+
+{
+  //EndShiftRequest
+}
+
+###
+
+POST {{MonthlyReprimand_HostAddress}}/api/checkpoint/start
+Content-Type: application/json
+
+{
+  //StartShiftRequest
+}
+
+###
+
+POST {{MonthlyReprimand_HostAddress}}/api/hrdepartment/CreateEmployee
+Content-Type: application/json
+
+{
+  //CreateEmployeeRequest
+}
+
+###
+
+DELETE {{MonthlyReprimand_HostAddress}}/api/hrdepartment/DeleteEmployee
+
+###
+
+PUT {{MonthlyReprimand_HostAddress}}/api/hrdepartment/EditEmployee
+Content-Type: application/json
+
+{
+  //UpdateEmployeeRequest
+}
+
+###
+
+GET {{MonthlyReprimand_HostAddress}}/api/hrdepartment/GetAllEmployees
+
+###
+
+GET {{MonthlyReprimand_HostAddress}}/api/hrdepartment/GetPosition
+
+###
