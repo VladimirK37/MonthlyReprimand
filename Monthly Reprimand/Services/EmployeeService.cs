@@ -19,7 +19,7 @@ namespace MonthlyReprimand.Services
         private readonly IMapper _mapper;
         private readonly EmployeeUnitOfWork _employeeUnitOfWork;
 
-        public EmployeeService(EmployeeRepository employeeRepository, PositionRepository positionRepository, 
+        public EmployeeService(EmployeeRepository employeeRepository, PositionRepository positionRepository,
             IMapper mapper, EmployeeUnitOfWork employeeUnitOfWork)
         {
             _employeeRepository = employeeRepository;
@@ -77,7 +77,7 @@ namespace MonthlyReprimand.Services
             var employeeEntity = _mapper.Map<Employee>(createEmployeeRequest);
             employeeEntity.Position = positionEntity;
 
-            await _employeeRepository.AddEmployeeAsync(employeeEntity);
+            _employeeRepository.AddEmployee(employeeEntity);
             await _employeeUnitOfWork.SaveChanges();
 
             var createEmployeeResponse = _mapper.Map<CreateEmployeeResponse>(employeeEntity);
@@ -94,7 +94,7 @@ namespace MonthlyReprimand.Services
         /// <exception cref="DataException"></exception>
         public async Task<UpdateEmployeeResponse> UpdateEmployeeAsync(UpdateEmployeeRequest updateEmployeeRequest)
         {
-            if(updateEmployeeRequest.FirstName == "" & updateEmployeeRequest.LastName == "" & updateEmployeeRequest.MiddleName == "")
+            if (updateEmployeeRequest.FirstName == "" & updateEmployeeRequest.LastName == "" & updateEmployeeRequest.MiddleName == "")
             {
                 throw new BadHttpRequestException("Ни одно поле не заполнено для изменения сотрудника", 400);
             }
@@ -107,7 +107,7 @@ namespace MonthlyReprimand.Services
                     throw new DataException("Не удалось найти должность сотрудника");
                 employeeEntity.Position = positionEntity;
             }
-            if(updateEmployeeRequest.FirstName != "")
+            if (updateEmployeeRequest.FirstName != "")
             {
                 employeeEntity.FirstName = updateEmployeeRequest.FirstName;
             }
@@ -138,7 +138,7 @@ namespace MonthlyReprimand.Services
             Employee employeeEntity = await _employeeRepository.GetEmployeeByIdAsync(deleteEmployeeRequest.Id) ??
                     throw new BadHttpRequestException($"Отсутвует пропуск по идентификатору {deleteEmployeeRequest.Id}", 400);
 
-            await _employeeRepository.RemoveEmployeeAsync(employeeEntity);
+            _employeeRepository.RemoveEmployee(employeeEntity);
             await _employeeUnitOfWork.SaveChanges();
         }
 

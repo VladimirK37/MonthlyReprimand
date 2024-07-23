@@ -56,11 +56,9 @@ namespace MonthlyReprimand.Data.Repositories
         /// </summary>
         /// <param name="employee"></param>
         /// <returns></returns>
-        public async Task RemoveEmployeeAsync(Employee employee)
+        public void RemoveEmployee(Employee employee)
         {
-            await DbContext.Employees
-                .Where(x => x.Id == employee.Id)
-                .ExecuteDeleteAsync();
+            DbContext.Employees.Remove(employee);
         }
 
         /// <summary>
@@ -68,9 +66,9 @@ namespace MonthlyReprimand.Data.Repositories
         /// </summary>
         /// <param name="employee"></param>
         /// <returns></returns>
-        public async Task AddEmployeeAsync(Employee employee)
+        public void AddEmployee(Employee employee)
         {
-            await DbContext.Employees.AddAsync(employee);
+            DbContext.Employees.Add(employee);
         }
     }
 }

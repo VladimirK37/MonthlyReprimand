@@ -15,7 +15,6 @@ builder.Services.AddDbContext<EmployeeDbContext>(options =>
 options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddServices();
-builder.Services.AddRepositoryes();
 
 var app = builder.Build();
 
